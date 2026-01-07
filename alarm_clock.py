@@ -1,48 +1,34 @@
-# Import Required Library
 from tkinter import *
 import datetime
 import time
 import winsound
 from threading import *
 
-# Create Object
 root = Tk()
 
 # Set geometry
 root.geometry("400x400")
 root.configure(bg="#FDE2FF")
 
-# Use Threading
 def Threading():
 	t1=Thread(target=alarm)
 	t1.start()
 
 def alarm():
-	# Infinite Loop
 	while True:
-		# Set Alarm
 		set_alarm_time = f"{hour.get()}:{minute.get()}:{second.get()}"
-
-		# Wait for one seconds
 		time.sleep(1)
-
-		# Get current time
 		current_time = datetime.datetime.now().strftime("%H:%M:%S")
 		print(current_time,set_alarm_time)
-
-		# Check whether set alarm is equal to current time or not
 		if current_time == set_alarm_time:
 			print("Time to Wake up")
 			# Playing sound
 			winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
 
-# Add Labels, Frame, Button, Optionmenus
-# ----------------- Header Frame -----------------
 header_frame = Frame(root, bg="white", bd=2, relief=RIDGE, height=40, width=250)
 header_frame.pack(pady=20)
 header_frame.pack_propagate(False)  # keeps the frame short and fixed size
 
-# Header Label
 Label(header_frame, text="⏰ Alarm Clock ⏰",
       font=("Comic Sans MS", 20, "bold"),
       fg="#545092",
@@ -52,7 +38,6 @@ time_frame = Frame(root, bg="#FF6F91", bd=3, relief=RIDGE, height=35, width=200)
 time_frame.pack(pady=(40, 20))  # space below the label
 time_frame.pack_propagate(False)  # keeps frame size fixed
 
-# Label inside frame
 Label(time_frame, text="Set a Time ⬇️",
       font=("Arial Rounded MT Bold", 13, "bold"),
       fg="white",
@@ -110,5 +95,4 @@ Button(root,
        bg="#F4F4F7",
        fg="black").pack(pady=(70, 20))
 
-# Execute Tkinter
 root.mainloop()
