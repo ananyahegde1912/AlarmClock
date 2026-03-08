@@ -15,12 +15,12 @@ I created an Alarm Clock app that allows users to set an alarm for a specific ho
 
 ## **How It Works**
 
-- I used `OptionMenu` widgets in Tkinter to create dropdowns for hour, minute, and second selections.
+- I used OptionMenu widgets in Tkinter to create dropdowns for hour, minute, and second selections.
 - The "Set Alarm" button triggers a function that continuously checks the current time.
-- When the current time matches the user-set time, `winsound.Beep` is used to play the alarm sound.
-  - `6000` in `winsound.Beep(6000, 300)` is the frequency in Hertz (how high or low the beep sounds).
-  - `300` is the duration of each beep in milliseconds.
-  - `time.sleep(0.1)` creates a short pause between consecutive beeps. 'def Threading ()'
+- When the current time matches the user-set time, winsound.Beep is used to play the alarm sound.
+  - 6000 in winsound.Beep(6000, 300) is the frequency in Hertz (how high or low the beep sounds).
+  - 300 is the duration of each beep in milliseconds.
+  - time.sleep(0.1) creates a short pause between consecutive beeps. 
 
 
 ## **Future Improvements**
